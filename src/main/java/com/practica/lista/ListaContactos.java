@@ -90,18 +90,7 @@ public class ListaContactos {
 	public boolean aunNoEncontrado(NodoTemporal aux, boolean salir, NodoPosicion npActual){
 		return (aux!=null && !salir) || (npActual!=null && !salir);
 	}
-	private boolean buscarPersona (String documento, NodoPersonas nodo) {
-		NodoPersonas aux = nodo;
-		while(aux!=null) {
-			if(aux.getDocumento().equals(documento)) {
-				return true;
-			}else {
-				aux = aux.getSiguiente();
-			}
-		}
-		return false;
-	}
-
+	
 	private void insertarPersona (String documento, NodoPersonas nodo) {
 		NodoPersonas aux = nodo, nuevo = new NodoPersonas(documento, null);
 		while(aux.getSiguiente()!=null) {
