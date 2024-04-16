@@ -23,19 +23,7 @@ public class ListaContactos {
 		auxAnt = buscarPosicion(aux,salirEncontrado,p);
 		aux = auxAnt[0];
 		ant = auxAnt[1];
-		/*while (aux!=null && !salirEncontrado[0]) {
-			if(aux.getFecha().compareTo(p.getFechaPosicion())==0) {
-				salirEncontrado[1] = true;
-				salirEncontrado[0] = true;
-				insertarListaCoordenada(aux, p);
 
-			}else if(aux.getFecha().compareTo(p.getFechaPosicion())<0) {
-				ant = aux;
-				aux=aux.getSiguiente();
-			}else if(aux.getFecha().compareTo(p.getFechaPosicion())>0) {
-				salirEncontrado[0]=true;
-			}
-		}*/
 		/**
 		 * No hemos encontrado ninguna posición temporal, así que
 		 * metemos un nodo nuevo en la lista
