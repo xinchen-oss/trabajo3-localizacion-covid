@@ -90,14 +90,7 @@ public class ListaContactos {
 	public boolean aunNoEncontrado(NodoTemporal aux, boolean salir, NodoPosicion npActual){
 		return (aux!=null && !salir) || (npActual!=null && !salir);
 	}
-	
-	private void insertarPersona (String documento, NodoPersonas nodo) {
-		NodoPersonas aux = nodo, nuevo = new NodoPersonas(documento, null);
-		while(aux.getSiguiente()!=null) {
-			aux = aux.getSiguiente();
-		}
-		aux.setSiguiente(nuevo);
-	}
+
 
 	public int personasEnCoordenadas () {
 		NodoPosicion aux = this.lista.getListaCoordenadas();
