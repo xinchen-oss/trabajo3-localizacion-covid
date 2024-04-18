@@ -67,7 +67,7 @@ public class ContactosCovid {
         }
         String datas[] = dividirEntrada(data);
         for (String linea : datas) {
-            this.cargarDatosLinea(linea);
+            cargarDatosLinea(linea);
         }
     }
 
@@ -116,8 +116,7 @@ public class ContactosCovid {
         }
     }
 
-    private void cargarDatosLinea(String linea) {
-        try {
+    private void cargarDatosLinea(String linea) throws EmsInvalidTypeException, EmsInvalidNumberOfDataException, EmsDuplicatePersonException, EmsDuplicateLocationException {
             String datos[] = this.dividirLineaData(linea);
             if (!datos[0].equals("PERSONA") && !datos[0].equals("LOCALIZACION")) {
                 throw new EmsInvalidTypeException();
@@ -136,9 +135,7 @@ public class ContactosCovid {
                 this.localizacion.addLocalizacion(pp);
                 this.listaContactos.insertarNodoTemporal(pp);
             }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
     }
 
     private void resetDatos(boolean reset) {
